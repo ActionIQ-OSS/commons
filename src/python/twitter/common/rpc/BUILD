@@ -16,7 +16,7 @@
 
 python_library(
   name = 'rpc',
-  sources = globs('*.py'),
+  sources = rglobs('*.py'),
   dependencies = [
     '3rdparty/python:thrift',
     'src/python/twitter/common/lang',

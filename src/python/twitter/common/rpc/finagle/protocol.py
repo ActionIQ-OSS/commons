@@ -83,7 +83,9 @@ class TFinagleProtocol(TBinaryProtocol.TBinaryProtocolAccelerated):
     if self._finagle_upgraded:
       if not hasattr(self._locals, 'trace'):
         self._locals.trace = Trace()
+        print "creating trace for {}".format(threading.current_thread())
       trace_id = self._locals.trace.get()
+      print "inner trace id {}".format(trace_id.trace_id)
       self.to_request_header(trace_id).write(self)
       with self._locals.trace.push(trace_id):
         return TBinaryProtocol.TBinaryProtocolAccelerated.writeMessageBegin(self, *args, **kwargs)
