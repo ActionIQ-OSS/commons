@@ -51,3 +51,6 @@ Copyright 2015 Twitter, Inc.
    limitations under the License.
 
 
+== Library building ==
+./pants setup-py src/python/twitter/common/rpc/::
+./pants setup-py src/thrift/com/twitter/::
